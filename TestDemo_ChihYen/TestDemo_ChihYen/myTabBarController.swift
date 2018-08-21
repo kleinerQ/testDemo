@@ -1,36 +1,19 @@
 //
-//  AViewController.swift
+//  myTabBarController.swift
 //  TestDemo_ChihYen
 //
-//  Created by Cyen on 2018/8/20.
+//  Created by Cyen on 2018/8/21.
 //  Copyright © 2018年 Cyen. All rights reserved.
 //
 
 import UIKit
 
-class AViewController: UIViewController {
+class myTabBarController: UITabBarController {
 
-    @IBOutlet weak var myImageView: UIImageView!
-    @IBOutlet weak var infoLabel: UILabel!
-    var contraintStatus = false
-    @IBOutlet weak var ViewToTopConstraint: NSLayoutConstraint!
-    @IBAction func addBtn(_ sender: Any) {
-        if contraintStatus{
-            ViewToTopConstraint.constant = 0
-            contraintStatus = !contraintStatus
-        }else{
-            ViewToTopConstraint.constant = 50
-            contraintStatus = !contraintStatus
-        }
-        
-        
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        myImageView.layer.cornerRadius = myImageView.frame.size.width / 2
-
-    
+        self.selectedIndex = 2
         // Do any additional setup after loading the view.
     }
 
