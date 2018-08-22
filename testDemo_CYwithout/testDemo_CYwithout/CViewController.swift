@@ -10,21 +10,28 @@ import UIKit
 
 class CViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    
+    func addNavBarWithRightItem(titleString: String)-> UINavigationBar{
+        
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         let screenHeight = screenSize.height
-        self.view.backgroundColor = .yellow
         let NameHeight = screenHeight * 0.09
         let NameWidth = screenWidth
         let navBar: UINavigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: NameWidth, height: NameHeight))
-        let navItem = UINavigationItem(title: "CViewController")
+        let navItem = UINavigationItem(title: titleString)
         
-        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: nil, action: #selector(done))
+        let doneItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.stop, target: nil, action: #selector(done))
         navItem.rightBarButtonItem = doneItem
         navBar.setItems([navItem], animated: false)
-        self.view.addSubview(navBar)
+        return navBar
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.view.addSubview(addNavBarWithRightItem(titleString: "CViewController"))
+        
         // Do any additional setup after loading the view.
     }
 
